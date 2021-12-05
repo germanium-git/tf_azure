@@ -1,0 +1,4 @@
+.idea
+*.vsdx
+tf_azure_backup/.terraform
+tf_azure_internal_lb/.terraform
