@@ -2,7 +2,10 @@
 *.vsdx
 tf_azure_backup/.terraform
 tf_azure_internal_lb/.terraform
+tf_azure_appgateway/.terraform
+tf_azure_routeserver_cRPD/.terraform
 .terraform.*
+.terraform
 terraform.tfstate
 terraform.tfstate.*
 terraform.tfvars
