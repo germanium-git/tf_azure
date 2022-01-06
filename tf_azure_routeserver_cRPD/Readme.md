@@ -1,6 +1,6 @@
 # Multi-region design with Azure Route Server and NVA
 
-The repository contains code to get the infrastructure from the picture below created in Azure. It represents a multi-region design with that consists of two hub and spoke elements deployed in different regions.
+The repository contains code to get the infrastructure from the picture below created in Azure. It represents a multi-region design that consists of two hub and spoke elements deployed in different regions.
 This simulation is stretched only across one region, however, it might be split into two regions without affecting the functionality.
 As network appliances two instances of Juniper Networks cRPD have been used running in Ubuntu virtual machine enabling the VXLAN overlay that is necessary to overcome the routing issues you would end up with if the tunneling mechanism wasn't used.
 More information on the loop and the cause why it is created can be found in the article [Route Server Multi-Region Design]( https://blog.cloudtrooper.net/2021/03/06/route-server-multi-region-design/).
@@ -41,6 +41,7 @@ Access the terminal and configure the virtual router.
 ```shell
 docker exec -it crpd01 cli
 ```
+Don't forget to apply the trial license to make BGP work. It can be downloaded from cRPD trial pages.
 
 ## Create Route servers with Bicep
 
@@ -68,6 +69,12 @@ to
 ```
 
 and run Terraform again. 
+
+## Test connectivity
+
+Watch the YT video demonstrating both the inter-hub and intra-hub connectivity.
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7YUvr-FvsGE/0.jpg)](https://www.youtube.com/watch?v=7YUvr-FvsGE&ab_channel=Germanium)
 
 ## Check routes
 
