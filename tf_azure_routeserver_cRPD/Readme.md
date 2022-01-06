@@ -32,6 +32,8 @@ At the time of writing the route server can't be created by Terraform yet. That'
 The vnet peering between hubs and spokes is configured without the option to use remote gateways as the route server doesn't exist yet and the provisioning would end up with an error.
 Either deploy the ARS first or create vnet peering without using remote gateways and update it later when both ARS already exist. 
 
+Rename the terraform.tfvars.git to terraform.tfvars and update the subscription ID in it.
+
 ## Configure cRPD
 
 Configuration files can be found in the folder [cRPD](/tf_azure_routeserver_cRPD/cRPD)
@@ -41,7 +43,8 @@ Access the terminal and configure the virtual router.
 ```shell
 docker exec -it crpd01 cli
 ```
-Don't forget to apply the trial license to make BGP work. It can be downloaded from cRPD trial pages.
+Don't forget to apply the trial license to make BGP work. It can be downloaded from [cRPD trial page](https://www.juniper.net/us/en/dm/crpd-free-trial.html).
+The cRPD image needs to be downloaded from Juniper Networks download unless the required version 21.1R1 or higher is available in trial section.  
 
 ## Create Route servers with Bicep
 
@@ -238,10 +241,7 @@ Model: cRPD
 Junos: 21.4R1.12
 cRPD package version : 21.4R1.12 built by builder on 2021-12-17 14:48:30 UTC
 ```
-According to the documentation 
-
-https://www.juniper.net/documentation/us/en/software/crpd/crpd-deployment/topics/concept/crpd-supported-features.html
-
+According to the [documentation](https://www.juniper.net/documentation/us/en/software/crpd/crpd-deployment/topics/concept/crpd-supported-features.html) 
 EVPN Type 5 with VXLAN is supported starting in cRPD Release 21.1R1.
 
 
