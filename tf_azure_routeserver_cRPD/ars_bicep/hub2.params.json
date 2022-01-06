@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnetName": {
+            "value": "hub2"
+        },
+        "publicIpName": {
+            "value": "hub2-pip"
+        },
+        "RouteServerName": {
+            "value": "hub2"
+        },
+        "routeServerBgpConnectionName": {
+            "value": "cRPD"
+        },
+        "peerAsn": {
+            "value": 65001
+        },
+        "peerIp": {
+            "value": "10.10.2.10"
+        }
+
+    }
+}

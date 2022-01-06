@@ -1,0 +1,188 @@
+azureuser@spoke1:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 60:45:bd:91:53:b7 brd ff:ff:ff:ff:ff:ff
+    inet 10.1.1.10/24 brd 10.1.1.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6245:bdff:fe91:53b7/64 scope link
+       valid_lft forever preferred_lft forever
+
+---------------------------------------------------------------------------------------------------
+
+
+azureuser@spoke2:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 60:45:bd:8a:d3:72 brd ff:ff:ff:ff:ff:ff
+    inet 10.2.1.10/24 brd 10.2.1.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6245:bdff:fe8a:d372/64 scope link
+       valid_lft forever preferred_lft forever
+
+
+---------------------------------------------------------------------------------------------------
+
+azureuser@spoke11:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 60:45:bd:8e:1f:45 brd ff:ff:ff:ff:ff:ff
+    inet 10.11.1.10/24 brd 10.11.1.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6245:bdff:fe8e:1f45/64 scope link
+       valid_lft forever preferred_lft forever
+
+---------------------------------------------------------------------------------------------------
+
+azureuser@spoke12:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 60:45:bd:8e:10:db brd ff:ff:ff:ff:ff:ff
+    inet 10.12.1.10/24 brd 10.12.1.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6245:bdff:fe8e:10db/64 scope link
+       valid_lft forever preferred_lft forever
+
+
+---------------------------------------------------------------------------------------------------
+
+azureuser@crpd1:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.1.100.100/32 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:0d:3a:ac:8d:a9 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.1.10/24 brd 10.0.1.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20d:3aff:feac:8da9/64 scope link
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master __crpd-vrf1 state UP group default qlen 1000
+    link/ether 00:0d:3a:ac:8f:96 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.10/24 brd 10.0.2.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20d:3aff:feac:8f96/64 scope link
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default
+    link/ether 02:42:10:6b:1d:4f brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+5: gre0@NONE: <NOARP,UP,LOWER_UP> mtu 1476 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/gre 0.0.0.0 brd 0.0.0.0
+6: gretap0@NONE: <BROADCAST,MULTICAST> mtu 1462 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+7: erspan0@NONE: <BROADCAST,MULTICAST> mtu 1450 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+8: sit0@NONE: <NOARP,UP,LOWER_UP> mtu 1480 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+    inet6 ::172.17.0.1/96 scope global
+       valid_lft forever preferred_lft forever
+    inet6 ::10.0.2.10/96 scope global
+       valid_lft forever preferred_lft forever
+    inet6 ::10.0.1.10/96 scope global
+       valid_lft forever preferred_lft forever
+    inet6 ::127.0.0.1/96 scope host
+       valid_lft forever preferred_lft forever
+9: ip6tnl0@NONE: <NOARP,UP,LOWER_UP> mtu 1452 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+    inet6 fe80::c0df:68ff:fe94:9dd0/64 scope link
+       valid_lft forever preferred_lft forever
+10: tunl0@NONE: <NOARP,UP,LOWER_UP> mtu 1480 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+11: lsi: <BROADCAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 56:4d:b7:77:e8:d1 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::544d:b7ff:fe77:e8d1/64 scope link
+       valid_lft forever preferred_lft forever
+12: irb: <BROADCAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether d2:3e:0d:58:22:92 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::d03e:dff:fe58:2292/64 scope link
+       valid_lft forever preferred_lft forever
+13: __crpd-vrf1: <MASTER,UP,LOWER_UP> mtu 65575 qdisc noqueue state UP group default qlen 1000
+    link/ether be:79:d4:35:ec:33 brd ff:ff:ff:ff:ff:ff
+
+---------------------------------------------------------------------------------------------------
+
+
+
+azureuser@crpd2:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.10.100.100/32 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:0d:3a:ac:87:29 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.1.10/24 brd 10.10.1.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20d:3aff:feac:8729/64 scope link
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master __crpd-vrf1 state UP group default qlen 1000
+    link/ether 00:0d:3a:ac:86:ad brd ff:ff:ff:ff:ff:ff
+    inet 10.10.2.10/24 brd 10.10.2.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20d:3aff:feac:86ad/64 scope link
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default
+    link/ether 02:42:3d:73:a2:ea brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+5: gre0@NONE: <NOARP,UP,LOWER_UP> mtu 1476 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/gre 0.0.0.0 brd 0.0.0.0
+6: gretap0@NONE: <BROADCAST,MULTICAST> mtu 1462 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+7: erspan0@NONE: <BROADCAST,MULTICAST> mtu 1450 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+8: sit0@NONE: <NOARP,UP,LOWER_UP> mtu 1480 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+    inet6 ::172.17.0.1/96 scope global
+       valid_lft forever preferred_lft forever
+    inet6 ::10.10.2.10/96 scope global
+       valid_lft forever preferred_lft forever
+    inet6 ::10.10.1.10/96 scope global
+       valid_lft forever preferred_lft forever
+    inet6 ::127.0.0.1/96 scope host
+       valid_lft forever preferred_lft forever
+9: ip6tnl0@NONE: <NOARP,UP,LOWER_UP> mtu 1452 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+    inet6 fe80::e4e7:b5ff:fed4:30a0/64 scope link
+       valid_lft forever preferred_lft forever
+10: tunl0@NONE: <NOARP,UP,LOWER_UP> mtu 1480 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+11: lsi: <BROADCAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether de:66:3e:0d:87:7b brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::dc66:3eff:fe0d:877b/64 scope link
+       valid_lft forever preferred_lft forever
+12: irb: <BROADCAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 86:7a:e4:b8:c8:84 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::847a:e4ff:feb8:c884/64 scope link
+       valid_lft forever preferred_lft forever
+13: __crpd-vrf1: <MASTER,UP,LOWER_UP> mtu 65575 qdisc noqueue state UP group default qlen 1000
+    link/ether 7e:cc:7c:12:83:79 brd ff:ff:ff:ff:ff:ff
+
+
